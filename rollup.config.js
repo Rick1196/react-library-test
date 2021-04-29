@@ -1,9 +1,10 @@
-import babel from '@rollup/plugin-babel';
-import external from 'rollup-plugin-peer-deps-external';
-import del from 'rollup-plugin-delete';
 import pkg from './package.json';
-import scss from "rollup-plugin-scss";
-
+import postcss from 'rollup-plugin-postcss';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import resolve from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
+import babel from '@rollup/plugin-babel';
+import del from 'rollup-plugin-delete';
 const config = {
     input: pkg.source,
     output: [
@@ -11,15 +12,14 @@ const config = {
         { file: pkg.module, format: 'esm' }
     ],
     plugins: [
-        external(),
         babel({
             exclude: 'node_modules/**'
         }),
         del({ targets: ['dist/*'] }),
-        scss({
-          output: "./dist/css/main.css",
-          failOnError: true,
-        }),
+        peerDepsExternal(),
+        resolve(),
+        commonjs(),
+        postcss()
     ],
     external: Object.keys(pkg.peerDependencies || {}),
 };

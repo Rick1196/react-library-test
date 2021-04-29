@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../../styles/components/EmailInput/EmailInput.scss';
 const EmailInput = (props) => {
     return (
         <div className="Container" {...props}>
