@@ -1,6 +1,6 @@
 {
-  "name": "library-hello",
-  "version": "0.1.7",
+  "name": "devteam-components-library",
+  "version": "1.0.0",
   "private": false,
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",

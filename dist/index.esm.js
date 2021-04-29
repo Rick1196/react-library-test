@@ -4,24 +4,6 @@ var HelloWorld = function HelloWorld() {
   return /*#__PURE__*/React.createElement("h1", null, "Hello world");
 };
 
-function _extends() {
-  _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
-}
-
 function styleInject(css, ref) {
   if ( ref === void 0 ) ref = {};
   var insertAt = ref.insertAt;
@@ -53,9 +35,9 @@ var css_248z = ".Container {\n  display: flex;\n  flex-direction: column;\n  jus
 styleInject(css_248z);
 
 var EmailInput = function EmailInput(props) {
-  return /*#__PURE__*/React.createElement("div", _extends({
+  return /*#__PURE__*/React.createElement("div", {
     className: "Container"
-  }, props), /*#__PURE__*/React.createElement("label", {
+  }, /*#__PURE__*/React.createElement("label", {
     for: props.idInput || "email"
   }, props.labelInput || ""), /*#__PURE__*/React.createElement("input", {
     className: "TextInput",

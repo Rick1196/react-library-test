@@ -1,8 +1,9 @@
 import React from 'react';
 import '../../styles/components/EmailInput/EmailInput.scss';
+
 const EmailInput = (props) => {
     return (
-        <div className="Container" {...props}>
+        <div className="Container">
             <label for={props.idInput || "email"}>{props.labelInput || ""}</label>
             <input
                 className="TextInput"
