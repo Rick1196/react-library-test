@@ -3,40 +3,48 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var React = require('react');
-var styled = require('styled-components');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
-var styled__default = /*#__PURE__*/_interopDefaultLegacy(styled);
 
 var HelloWorld = function HelloWorld() {
   return /*#__PURE__*/React__default['default'].createElement("h1", null, "Hello world");
 };
 
-function _taggedTemplateLiteral(strings, raw) {
-  if (!raw) {
-    raw = strings.slice(0);
-  }
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
 
-  return Object.freeze(Object.defineProperties(strings, {
-    raw: {
-      value: Object.freeze(raw)
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
     }
-  }));
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
 }
 
-var _templateObject, _templateObject2, _templateObject3;
-
 var EmailInput = function EmailInput(props) {
-  return /*#__PURE__*/React__default['default'].createElement(Container, props, /*#__PURE__*/React__default['default'].createElement(TextInput, {
+  return /*#__PURE__*/React__default['default'].createElement("div", _extends({
+    className: "Container"
+  }, props), /*#__PURE__*/React__default['default'].createElement("label", {
+    for: props.idInput || "email"
+  }, props.labelInput || ""), /*#__PURE__*/React__default['default'].createElement("input", {
+    className: "TextInput",
+    type: props.typeInput || "text",
+    id: props.idInput || "email",
+    name: props.nameInput || "email",
     placeholder: props.textInput || "correo electrónico"
-  }), /*#__PURE__*/React__default['default'].createElement(Rect2, null));
+  }), /*#__PURE__*/React__default['default'].createElement("span", {
+    className: "Rect2"
+  }));
 };
-
-var Container = styled__default['default'].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  position: relative;\n"])));
-var TextInput = styled__default['default'].input(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  font-family: Roboto;\n  font-style: normal;\n  font-weight: 400;\n  color: #121212;\n  font-size: 28px;\n  align-self: stretch;\n  flex: 1 1 0%;\n  border: none;\n  background: transparent;\n  display: flex;\n  flex-direction: column;\n"])));
-var Rect2 = styled__default['default'].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  height: 3px;\n  background-color: rgba(0,0,0,1);\n  align-self: stretch;\n"])));
 
 exports.EmailInput = EmailInput;
 exports.HelloWorld = HelloWorld;
